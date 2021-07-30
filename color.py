@@ -1,0 +1,18 @@
+from reportlab.pdfgen import canvas
+from reportlab.lib.colors import Color, red, black, blue
+redtrans = Color(100, 0, 0, alpha = 0.5)
+item = canvas.Canvas('color.pdf')
+item.setFillColor(black)
+item.setFont('Helvetica', 10)
+item.drawString(25, 180, 'Solid')
+item.setFillColor(blue)
+item.rect(25, 25, 100, 100, fill=True, stroke=False)
+item.setFillColor(red)
+item.rect(100, 75, 100, 100, fill=True, stroke=False)
+item.setFillColor(black)
+item.drawString(225, 180, 'transparent')
+item.setFillColor(blue)
+item.rect(225, 25, 100, 100, fill=True, stroke=False)
+item.setFillColor(redtrans)
+item.rect(300, 75, 100, 100, fill=True, stroke=False)
+item.save()
